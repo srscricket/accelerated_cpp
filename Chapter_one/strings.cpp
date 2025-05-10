@@ -5,9 +5,25 @@
 #include <string>
 
 int main() {
-  std::string name;
   std::cout << "Please enter your name: ";
-  std::getline(std::cin, name);
-  std::cout << "Hello, " << name << "!" << std::endl;
+  std::string name;
+  std::cin >> name;
+
+  // build string
+  const std::string greeting = "Hello, " + name + "!";
+
+  // build the other lines
+  const std::string spaces(greeting.size(), ' ');
+  const std::string second = "* " + spaces + " *";
+
+  // build yet more lines
+  const std::string first(second.size(), '*');
+
+  // write it
+  std::cout << first << '\n'
+            << second << '\n'
+            << "* " << greeting << " *\n"
+            << second << '\n'
+            << first << '\n';
   return 0;
 }
