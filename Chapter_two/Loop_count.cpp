@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 #include <string>
 
 using std::cin;
@@ -8,8 +7,10 @@ using std::endl;
 using std::string;
 
 int main() {
-  const int pad = 1;
-  const int rows = pad * 2 + 3;
+  int pad = 1;
+  cout << "Please enter the number of padding rows: ";
+  cin >> pad;
+  int rows = pad * 2 + 3;
   // ask the person's name
   cout << "Please enter your first name: ";
   // read the name
