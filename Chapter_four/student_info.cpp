@@ -1,18 +1,12 @@
 // source file for the student_info -related functions
 #include "student_info.h"
+#include <iostream>
 
 using std::istream;
 using std::vector;
 
 bool compare(const student_info &x, const student_info &y) {
   return x.name < y.name;
-}
-
-istream &read(istream &in, student_info &s) {
-  // read the student's name and midterm and final exam grades
-  in >> s.name >> s.midterm >> s.final;
-  read_hw(in, s.homework); // read and store hw grades
-  return in;
 }
 
 istream &read_hw(istream &in, vector<double> &hw) {
@@ -25,4 +19,11 @@ istream &read_hw(istream &in, vector<double> &hw) {
     in.clear(); // clear the eof flag
   }
   return in;
+}
+
+istream &read(istream &is, student_info &s) {
+  // read the student's name and midterm and final exam grades
+  is >> s.name >> s.midterm >> s.final;
+  read_hw(is, s.homework); // read and store hw grades
+  return is;
 }

@@ -11,7 +11,16 @@
 #include "grade.h"
 #include "student_info.h"
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::domain_error;
+using std::endl;
+using std::max;
+using std::setprecision;
+using std::sort;
+using std::streamsize;
+using std::string;
+using std::vector;
 
 // code for median function from 4.1.1/53
 // compute the median of a
@@ -42,9 +51,9 @@ int main() {
     try {
       double final_grade = grade(students[i]);
       streamsize prec = cout.precision();
-      cout << setprecision(3) << final_grade << setprecision(prec);
+      cout << setprecision(3) << final_grade << setprecision(prec) << endl;
 
-    } catch (domain_error &e) {
+    } catch (domain_error e) {
       cout << e.what();
     }
   }
