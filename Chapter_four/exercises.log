@@ -1,0 +1,16 @@
+exercises.cpp:80:4: error: expected '}' at end of input
+   80 |   }
+      |    ^
+exercises.cpp:14:20: note: to match this '{'
+   14 | struct uniqueWords {
+      |                    ^
+exercises.cpp: In member function 'int uniqueWords::main()':
+exercises.cpp:59:15: error: could not convert 'std::find<__gnu_cxx::__normal_iterator<uniqueWords*, vector<uniqueWords> >, __cxx11::basic_string<char> >(unique_words.std::vector<uniqueWords>::begin(), unique_words.std::vector<uniqueWords>::end(), (* & word))' from '__gnu_cxx::__normal_iterator<uniqueWords*, std::vector<uniqueWords> >' to 'bool'
+   59 |       if (find(unique_words.begin(), unique_words.end(), word)) {
+      |           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |               |
+      |               __gnu_cxx::__normal_iterator<uniqueWords*, std::vector<uniqueWords> >
+exercises.cpp: At global scope:
+exercises.cpp:80:4: error: expected unqualified-id at end of input
+   80 |   }
+      |    ^
