@@ -5,6 +5,7 @@
 // local include
 #include "grade.h"
 #include "student_info.h"
+#include "student_test_lib.h"
 
 // namespace declaraitons
 using std::vector;
@@ -38,10 +39,7 @@ vector<student_info> extract_fails(vector<student_info> &students) {
 // test extract_fails function
 bool test_extract_fails() {
   // need student_info list with midterm, final and an array of homework grades
-  vector<student_info> students = {{"Alice", 85, 90, {80, 85, 90}},
-                                   {"Bob", 50, 55, {40, 45, 50}},
-                                   {"Charlie", 75, 80, {70, 75, 80}},
-                                   {"David", 40, 45, {30, 35, 40}}};
+  vector<student_info> students = test_student_info();
 
   vector<student_info> fails = extract_fails(students);
 
