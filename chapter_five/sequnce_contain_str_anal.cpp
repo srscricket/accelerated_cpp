@@ -13,9 +13,11 @@ using std::vector;
 // determine if student fauiled
 bool fgrade(const student_info &s) { return grade(s) < 60; }
 
-// separete students into two groups: passing and failing
-// function returns passing students and modifies the original list to contain
-// only failing students
+// separete students into
+//    two groups : passing and failing
+//  function returns passing students and modifies the
+//  original list to contain only failing students
+//  commenting out the old function, book has nwe function
 vector<student_info> extract_fails(vector<student_info> &students) {
   vector<student_info> pass, fail;
   vector<student_info>::iterator iter = students.begin();
@@ -36,9 +38,28 @@ vector<student_info> extract_fails(vector<student_info> &students) {
   return fail;     // return the failing students
 }
 
+/*
+// newfunction
+vector<student_info> extract_fails(vector<student_info> &students) {
+  vector<student_info> fails;
+  vector<student_info>::size_type i = 0;
+
+  // invariant: elements [0,i) of students are passing]
+  while (i != students.size()) {
+    if (fgrade(students[i])) {
+      fails.push_back(students[i]);         // add to failing list
+      students.erase(students.begin() + i); // remove from original list
+    } else {
+      ++i; // move to next student
+    }
+  }
+  return fails; // return the failing students
+}
+*/
 // test extract_fails function
 bool test_extract_fails() {
-  // need student_info list with midterm, final and an array of homework grades
+  // need student_info list with midterm, final and an array of homework
+  // grades
   vector<student_info> students = test_student_info();
 
   vector<student_info> fails = extract_fails(students);
